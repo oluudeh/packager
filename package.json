@@ -1,0 +1,33 @@
+{
+  "name": "packager",
+  "version": "1.0.0",
+  "description": "Github API packager",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc && ncc build lib/main.js",
+    "clean": "rm -rf lib dist",
+    "add": "git add .",
+    "commit": "git commit -m \"update\"",
+    "push": "git push",
+    "git": "npm run add && npm run commit && npm run push",
+    "update": "npm run clean; npm run build; npm run git;",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "OpenAPI",
+    "Github",
+    "package"
+  ],
+  "author": "Olu Udeh",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@vercel/ncc": "^0.36.1",
+    "typescript": "^5.0.3"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "yamljs": "^0.3.0"
+  }
+}

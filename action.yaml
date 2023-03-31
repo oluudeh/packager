@@ -1,0 +1,16 @@
+name: "OpenAPI Generator for Github Packages"
+description: "Generates and publishes libraries based on an open API file to Github packages."
+branding:
+  icon: 'box'
+  color: 'gray-dark'
+inputs:
+  SCHEMA_FILE_PATH:
+    description: "Path to openapi file"
+    required: true
+    default: "api-spec.yaml"
+  DEPLOY_TOKEN:
+    description: "Your deploy token"
+    required: true
+runs:
+  using: node12
+  main: "lib/main.js"
